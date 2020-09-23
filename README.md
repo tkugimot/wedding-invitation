@@ -15,6 +15,11 @@ yarn serve
 yarn build
 ```
 
+### Deploy to github pages
+```
+yarn deploy
+```
+
 ### Lints and fixes files
 ```
 yarn lint
