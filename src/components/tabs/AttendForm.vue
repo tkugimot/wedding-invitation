@@ -21,7 +21,29 @@
                                 lg="12"
                                 xl="12"
                         >
-                            <h1>ご出欠</h1>
+                            <h1 class="mb-5">ご出欠</h1>
+                            <div
+                                    class="result-message"
+                                    v-if="!showForm"
+                            >
+                                <v-container>
+                                    <v-alert type="info"
+                                             v-if="result_success === 'yet'"
+                                    >
+                                        送信中です...🏃‍♂️
+                                    </v-alert>
+                                    <v-alert type="success"
+                                             v-if="result_success === 'success'"
+                                    >
+                                        送信に成功しました！ 🙆‍♂️
+                                    </v-alert>
+                                    <v-alert type="error"
+                                             v-if="result_success === 'error'"
+                                    >
+                                        送信に失敗しました。<br> 再度お試しください🙇‍♂️
+                                    </v-alert>
+                                </v-container>
+                            </div>
                         </v-col>
                     </v-row>
                     <v-row
@@ -160,7 +182,10 @@
                 allergy: '',
 
                 // メッセージ
-                message: ''
+                message: '',
+
+                // フォーム送信が成功したかどうか
+                result_success: 'yet'
             }
         },
         methods: {
@@ -175,15 +200,6 @@
                     default:
                         this.attend = '欠席';
                 }
-
-                console.log("出欠", this.attend);
-                console.log("名前", this.your_name);
-                console.log("zip", this.zip);
-                console.log("address", this.address);
-                console.log("phone", this.phone);
-                console.log("email", this.email);
-                console.log("allergy", this.allergy);
-                console.log("message", this.message);
 
                 const submitParams = new FormData();
                 // ご出欠(attend)
@@ -212,8 +228,9 @@
                 axios.post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams).then(() => {
                     // フォーム非表示
                     this.showForm = false;
-                }).catch(err => {
-                    console.log('err: ', err);
+                    this.result_success = 'success';
+                }).catch(() => {
+                    this.result_success = 'error';
                 });
                 // フォーム非表示
                 this.showForm = false;

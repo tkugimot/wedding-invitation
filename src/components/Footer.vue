@@ -28,7 +28,9 @@
                 <v-divider></v-divider>
 
                 <v-card-text class="white--text">
-                    © {{ new Date().getFullYear() }} <strong>Toshimitsu Kugimoto</strong>
+                    Icon made by Freepik from www.flaticon.com<br><br>
+                    © {{ new Date().getFullYear() }}
+                    <strong>Toshimitsu Kugimoto</strong>
                 </v-card-text>
             </v-card>
         </v-footer>
