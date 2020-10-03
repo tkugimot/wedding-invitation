@@ -1,28 +1,16 @@
 <template>
     <v-carousel
             cycle
-            height="400"
+            height="600"
             hide-delimiter-background
             show-arrows-on-hover
             hide-delimiters
     >
         <v-carousel-item
-                v-for="(slide, i) in slides"
+                v-for="(item,i) in items"
                 :key="i"
-        >
-            <v-sheet
-                    :color="colors[i]"
-                    height="100%"
-            >
-                <v-row
-                        class="fill-height"
-                        align="center"
-                        justify="center"
-                >
-                    <div class="display-3">{{ slide }} Slide</div>
-                </v-row>
-            </v-sheet>
-        </v-carousel-item>
+                :src="item.src"
+        ></v-carousel-item>
     </v-carousel>
 </template>
 
@@ -31,19 +19,19 @@
         name: "Carousel",
         data () {
             return {
-                colors: [
-                    'indigo',
-                    'warning',
-                    'pink darken-2',
-                    'red lighten-1',
-                    'deep-purple accent-4',
-                ],
-                slides: [
-                    'First',
-                    'Second',
-                    'Third',
-                    'Fourth',
-                    'Fifth',
+                items: [
+                    {
+                        src: require('../assets/images/2.jpg'),
+                    },
+                    {
+                        src: require('../assets/images/3.jpg'),
+                    },
+                    {
+                        src: require('../assets/images/4.jpg'),
+                    },
+                    {
+                        src: require('../assets/images/088.jpg'),
+                    },
                 ],
             }
         },

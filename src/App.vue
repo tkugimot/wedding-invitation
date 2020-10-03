@@ -1,76 +1,87 @@
 <template>
-  <v-app>
-<!--    <v-app-bar-->
-<!--      app-->
-<!--      color="primary"-->
-<!--      dark-->
-<!--    >-->
-<!--      <div class="d-flex align-center">-->
-<!--        <v-img-->
-<!--          alt="Vuetify Logo"-->
-<!--          class="shrink mr-2"-->
-<!--          contain-->
-<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
-<!--          transition="scale-transition"-->
-<!--          width="40"-->
-<!--        />-->
+    <v-app id="app">
+        <div id="top"></div>
+        <Carousel/>
+        <v-row
+                class="top-links"
+                align="center"
+                justify="space-around"
+        >
+            <v-col>
+                <v-btn large text color="pink" href="#greeting" v-smooth-scroll>ご挨拶</v-btn>
+            </v-col>
+            <v-col>
+                <v-btn large text color="pink" href="#event" v-smooth-scroll>日時・会場</v-btn>
+            </v-col>
+            <v-col>
+                <v-btn large text color="pink" href="#attend" v-smooth-scroll>ご出欠</v-btn>
+            </v-col>
+        </v-row>
 
-<!--        <v-img-->
-<!--          alt="Vuetify Name"-->
-<!--          class="shrink mt-1 hidden-sm-and-down"-->
-<!--          contain-->
-<!--          min-width="100"-->
-<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"-->
-<!--          width="100"-->
-<!--        />-->
-<!--      </div>-->
-
-<!--      <v-spacer></v-spacer>-->
-
-<!--      <v-btn-->
-<!--        href="https://github.com/vuetifyjs/vuetify/releases/latest"-->
-<!--        target="_blank"-->
-<!--        text-->
-<!--      >-->
-<!--        <span class="mr-2">Latest Release</span>-->
-<!--        <v-icon>mdi-open-in-new</v-icon>-->
-<!--      </v-btn>-->
-<!--    </v-app-bar>-->
-
-    <v-main>
-      <Carousel/>
-<!--      <HelloWorld/>-->
-    </v-main>
-  </v-app>
+        <div id="greeting">
+            <Message/>
+        </div>
+        <div id="event">
+            <Event/>
+        </div>
+        <div id="attend">
+            <AttendForm/>
+        </div>
+        <Footer/>
+    </v-app>
 </template>
 
+<style>
+    /* Google fontsで導入したいfonts から@importのコードを取得 */
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+    #app {
+        /* Google fontsで導入したいfontsからfont-familyを取ってくる */
+        font-family: 'Noto Sans JP', cursive;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        overflow: hidden;
+    }
+</style>
+
 <script>
-// import HelloWorld from './components/HelloWorld';
 import Carousel from "./components/Carousel";
+import Message from "./components/tabs/Message";
+import Event from "./components/tabs/Event";
+import AttendForm from "./components/tabs/AttendForm";
+import vueSmoothScroll from 'vue-smooth-scroll';
+import Vue from 'vue';
+import Footer from "./components/Footer";
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(vueSmoothScroll);
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: process.env.VUE_APP_GOOGLE_MAP_API,
+        libraries: 'places',
+        region: 'JP',
+        language: 'ja'
+    }
+});
+new Vue({
+});
 
 export default {
   name: 'App',
 
   components: {
-    Carousel,
-    // HelloWorld,
+      Footer,
+      Carousel,
+      Message,
+      Event,
+      AttendForm
   },
 
-  data: () => ({
-    colors: [
-      'indigo',
-      'warning',
-      'pink darken-2',
-      'red lighten-1',
-      'deep-purple accent-4',
-    ],
-    slides: [
-      'First',
-      'Second',
-      'Third',
-      'Fourth',
-      'Fifth',
-    ],
-  }),
+  data() {
+      return {
+          tab: null
+      }
+  }
 };
 </script>

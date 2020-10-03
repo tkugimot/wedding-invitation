@@ -9,8 +9,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-smooth-scroll": "^1.0.13",
+    "vue2-google-maps": "^0.10.7",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {
