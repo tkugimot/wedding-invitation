@@ -24,21 +24,19 @@
                                 class="mb-5"
                         >
                             <img class="icon_image" src="@/assets/images/event.png"/>
-                            <h2>日時・会場</h2>
+                            <h2 class="mb-10">日時・会場</h2>
                             <v-container>
-                                <div>
+                                <div class="mb-10">
                                     <p>
-                                        挙式
-                                        2021.03.27
-                                        17:15~
-
-                                        披露宴
-                                        19:00~
+                                        挙式: 2021.03.27 17:45 〜
+                                    </p>
+                                    <p>
+                                        披露宴: 同日 18:30 〜 21:00
                                     </p>
                                 </div>
                             </v-container>
                             <v-btn
-                                    color="yellow"
+                                    color="error"
                                     href="https://tokyo.angelion.jp/"
                             >
                                 ANGELION AU PLAZA TOKYO
