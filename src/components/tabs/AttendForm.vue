@@ -3,6 +3,7 @@
             color="basil"
             flat
             elevation="3"
+            class="back"
     >
         <v-card-text>
             <v-container
@@ -21,7 +22,8 @@
                                 lg="12"
                                 xl="12"
                         >
-                            <h1 class="mb-5">ご出欠</h1>
+                            <img class="icon_image" src="@/assets/images/syukketsu.png"/>
+                            <h2>ご出欠</h2>
                             <div
                                     class="result-message"
                                     v-if="!showForm"
@@ -132,6 +134,16 @@
     p {
         text-align: center;
     }
+    .back {
+        background-size: contain;
+        background-repeat: repeat-y;
+        background-image: url(../../assets/images/background.jpg);
+    }
+    .icon_image {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
 </style>
 
 <script>
@@ -191,10 +203,10 @@
         methods: {
             submit: function() {
                 switch (this.attend) {
-                    case '0':
+                    case 0:
                         this.attend = '出席';
                         break;
-                    case '1':
+                    case 1:
                         this.attend = 'オンラインで出席';
                         break;
                     default:

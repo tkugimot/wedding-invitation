@@ -3,6 +3,7 @@
             color="basil"
             flat
             elevation="3"
+            class="back"
     >
         <v-card-text>
             <v-container
@@ -22,7 +23,8 @@
                                 xl="12"
                                 class="mb-5"
                         >
-                            <h1 class="mb-10">EVENTS</h1>
+                            <img class="icon_image" src="@/assets/images/event.png"/>
+                            <h2>日時・会場</h2>
                             <v-container>
                                 <div>
                                     <p>
@@ -85,6 +87,18 @@
     </v-card>
 </template>
 
+<style scoped>
+    .back {
+        background-size: contain;
+        background-repeat: repeat-y;
+        background-image: url(../../assets/images/background.jpg);
+    }
+    .icon_image {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+</style>
 <script>
     export default {
         name: "HelloWorld",
