@@ -115,8 +115,16 @@
         text-align: center;
     }
     .back {
-        background-size: contain;
-        background-repeat: repeat-y;
-        background-image: url(../../assets/images/background.jpg);
+        /*background-size: contain;*/
+        /*background-repeat: repeat-y;*/
+        /*background-image: url(../../assets/images/background.jpg);*/
+
+        background-color: #fff;
+        background-image:
+                /*radial-gradient(#ffbcbc 20%, transparent 20%),*/
+                radial-gradient(#ffe0e0 50%, transparent 50%);
+        background-repeat: repeat;
+        background-size: 75px 75px;
+        background-position: 0 0, 20px 20px;
     }
 </style>

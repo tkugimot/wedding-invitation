@@ -1,33 +1,35 @@
 <template>
     <v-app id="app">
-        <div id="top"></div>
-        <Carousel/>
-        <v-row
-                class="top-links"
-                align="center"
-                justify="space-around"
-        >
-            <v-col>
-                <v-btn large text color="red" href="#greeting" v-smooth-scroll>ご挨拶</v-btn>
-            </v-col>
-            <v-col>
-                <v-btn large text color="red" href="#event" v-smooth-scroll>日時・会場</v-btn>
-            </v-col>
-            <v-col>
-                <v-btn large text color="red" href="#attend" v-smooth-scroll>ご出欠</v-btn>
-            </v-col>
-        </v-row>
+        <div class="back">
+            <div id="top"></div>
+            <Carousel/>
+            <v-row
+                    class="top-links"
+                    align="center"
+                    justify="space-around"
+            >
+                <v-col class='top-tab'>
+                    <v-btn large text color="red" href="#greeting" v-smooth-scroll>ご挨拶</v-btn>
+                </v-col>
+                <v-col class='top-tab'>
+                    <v-btn large text color="red" href="#event" v-smooth-scroll>日時・会場</v-btn>
+                </v-col>
+                <v-col class='top-tab'>
+                    <v-btn large text color="red" href="#attend" v-smooth-scroll>ご出欠</v-btn>
+                </v-col>
+            </v-row>
 
-        <div id="greeting">
-            <Message/>
+            <div id="greeting">
+                <Message/>
+            </div>
+            <div id="event">
+                <Event/>
+            </div>
+            <div id="attend">
+                <AttendForm/>
+            </div>
+            <Footer/>
         </div>
-        <div id="event">
-            <Event/>
-        </div>
-        <div id="attend">
-            <AttendForm/>
-        </div>
-        <Footer/>
     </v-app>
 </template>
 
@@ -42,6 +44,29 @@
         text-align: center;
         color: white;
         overflow: hidden;
+    }
+
+    @media only screen and (min-width: 750px) {
+        #app {
+            background-color: #fff5f7;
+            /*background-image:*/
+            /*    !*radial-gradient(#ffbcbc 20%, transparent 20%),*!*/
+            /*        radial-gradient(#ffe0e0 50%, transparent 50%);*/
+            /*background-repeat: repeat;*/
+            /*background-size: 75px 75px;*/
+            /*background-position: 0 0, 20px 20px;*/
+        }
+        .back {
+            width: 900px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+    .top-links {
+        margin: 0 !important;
+    }
+    .top-tab {
+        background-color: #ffffff;
     }
 </style>
 
