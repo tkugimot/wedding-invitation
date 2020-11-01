@@ -134,11 +134,6 @@
     p {
         text-align: center;
     }
-    /*.back {*/
-    /*    background-size: contain;*/
-    /*    background-repeat: repeat-y;*/
-    /*    background-image: url(../../assets/images/background.jpg);*/
-    /*}*/
     .back {
         background-color: #fff;
         background-image:

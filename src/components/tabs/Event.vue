@@ -87,10 +87,6 @@
 
 <style scoped>
     .back {
-        /*background-size: contain;*/
-        /*background-repeat: repeat-y;*/
-        /*background-image: url(../../assets/images/background.jpg);*/
-
         background-color: #fff;
         background-image:
             /*radial-gradient(#ffbcbc 20%, transparent 20%),*/
