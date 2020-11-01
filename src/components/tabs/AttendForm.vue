@@ -94,12 +94,12 @@
                                             label="電話番号"
                                             required
                                     ></v-text-field>
-                                    <v-text-field
-                                            v-model="email"
-                                            :rules="emailRules"
-                                            label="メールアドレス"
-                                            required
-                                    ></v-text-field>
+<!--                                    <v-text-field-->
+<!--                                            v-model="email"-->
+<!--                                            :rules="emailRules"-->
+<!--                                            label="メールアドレス"-->
+<!--                                            required-->
+<!--                                    ></v-text-field>-->
                                     <v-text-field
                                             v-model="allergy"
                                             label="アレルギー"
@@ -189,15 +189,15 @@
                 phone: '',
 
                 // メールアドレス
-                email: '',
-                emailRules: [
-                    value => !!value || 'Required.',
-                    value => (value || '').length <= 50 || '最大50文字です',
-                    value => {
-                        const pattern = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                        return pattern.test(value) || '不正なメールアドレスです'
-                    },
-                ],
+                // email: '',
+                // emailRules: [
+                //     value => !!value || 'Required.',
+                //     value => (value || '').length <= 50 || '最大50文字です',
+                //     value => {
+                //         const pattern = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                //         return pattern.test(value) || '不正なメールアドレスです'
+                //     },
+                // ],
 
                 // アレルギー
                 allergy: '',
@@ -233,8 +233,8 @@
                 submitParams.append("entry.900954813", this.address);
                 // 電話番号(phone)
                 submitParams.append("entry.1546204373", this.phone);
-                // メールアドレス(email)
-                submitParams.append("entry.78862528", this.email);
+                // // メールアドレス(email)
+                // submitParams.append("entry.78862528", this.email);
                 // アレルギー(allergy)
                 submitParams.append("entry.1859015822", this.allergy);
                 // メッセージ(message)
