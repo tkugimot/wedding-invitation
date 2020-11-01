@@ -110,7 +110,7 @@
     #heading03:before{
         content:" ";
         position:absolute;
-        /*top:-5px;*/
+        top:-5px;
         left:0;
         width:0;
         height:0;
