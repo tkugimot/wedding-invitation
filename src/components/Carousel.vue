@@ -141,13 +141,13 @@
             return {
                 items: [
                     {
-                        src: require('../assets/images/005_low.jpg'),
+                        src: require('../assets/images/073_low.jpg'),
                     },
                     {
                         src: require('../assets/images/090_low.jpg'),
                     },
                     {
-                        src: require('../assets/images/073_low.jpg'),
+                        src: require('../assets/images/005_low.jpg'),
                     },
                     {
                         src: require('../assets/images/114_low.jpg'),
