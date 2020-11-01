@@ -1,5 +1,6 @@
 <template>
     <v-carousel
+            circle
             height="auto"
             hide-delimiter-background
             show-arrows-on-hover
@@ -141,7 +142,7 @@
             return {
                 items: [
                     {
-                        src: require('../assets/images/073_low.jpg'),
+                        src: require('../assets/images/118_low.jpg'),
                     },
                     {
                         src: require('../assets/images/090_low.jpg'),
