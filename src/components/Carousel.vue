@@ -1,6 +1,6 @@
 <template>
     <v-carousel
-            circle
+            cycle
             height="auto"
             hide-delimiter-background
             show-arrows-on-hover
