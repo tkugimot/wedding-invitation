@@ -24,7 +24,20 @@
                                 class="mb-5"
                         >
                             <img class="icon_image" src="@/assets/images/event.png"/>
-                            <h2 class="mb-10">日時・会場</h2>
+                            <h2 class="mb-10">会場・日時</h2>
+                            <v-btn
+                                    color="error"
+                                    href="https://tokyo.angelion.jp/"
+                            >
+                                ANGELION AU PLAZA TOKYO
+                            </v-btn>
+                            <v-btn
+                                    color="success"
+                                    href="https://social-distance.escrit.jp/"
+                                    class="mb-5 ma-5"
+                            >
+                                会場の感染症対策
+                            </v-btn>
                             <v-container>
                                 <div class="mb-10">
                                     <p>
@@ -35,12 +48,6 @@
                                     </p>
                                 </div>
                             </v-container>
-                            <v-btn
-                                    color="error"
-                                    href="https://tokyo.angelion.jp/"
-                            >
-                                ANGELION AU PLAZA TOKYO
-                            </v-btn>
                             <v-container>
                                 <div class="mt-10">
                                     <p>
